@@ -27,7 +27,7 @@ const _gridModel = {
         pageSize : 10
     },
     basicFilter : {},
-    api : "Users.json",
+    api : "users.json",
 }
 
 const EmployeeList = () => {
