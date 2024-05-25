@@ -2,7 +2,7 @@ import axios from "axios";
 
 const getData = async(dataFile,iStart,iCount) =>{
 
-    const req = await axios.get("/users.json")
+    const req = await axios.get(dataFile)
 
     const _dataPager = req.data.slice(iStart,iStart+iCount);
     return { rows : _dataPager , count : req.data.length };
