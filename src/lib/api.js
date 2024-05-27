@@ -1,4 +1,5 @@
 import axios from "axios";
+const $ = window.$;
 
 const getData = async(dataFile,iStart,iCount) =>{
 
@@ -24,6 +25,13 @@ const gridF = {
             if(setGrd) setGrd({...grd});
         }
     }
+    ,edit : (grd,r,e) =>{
+        if(e) e.preventDefault();
+        grd.currentRow = {...r};
+        
+        $("#modalEntry").modal("show");
+    }
+
 }
 
 

@@ -24,20 +24,21 @@ const Pager =  ({grd,setGrd}) => {
         gotoPage(grd,iPage)
     }
 
+
     return (
 
         <div className="d-flex d-flex-row ">
             <div className="ml-2">
                 <ul className="pagination pagination-sm">
-                    <li className="page-item"><a href="#" className="page-link" onClick={(e)=> handleGotoPage(grd,grd.pager.currentPage-1,e)}><span aria-hidden="true">&laquo;</span></a></li> 
+                    <li className="page-item"><a href="#" className="page-link" onClick={(e)=> handleGotoPage(grd,grd.pager.currentPage-1,e)}><span aria-hidden="true">&laquo;&nbsp;Previous</span></a></li> 
                     <li className="page-item active" aria-current="page" >
                         <span className="page-link">{grd.pager.currentPage}</span>
                     </li>
-                    <li className="page-item"><a href="#" className="page-link"   onClick={(e) => handleGotoPage(grd,grd.pager.currentPage+1,e)}><span aria-hidden="true">&raquo;</span></a></li> 
+                    <li className="page-item"><a href="#" className="page-link"   onClick={(e) => handleGotoPage(grd,grd.pager.currentPage+1,e)}><span aria-hidden="true">&raquo;&nbsp;Next</span></a></li> 
                 </ul>
             </div>
             <div className="flex-fill text-right">
-                <span className="badge badge-success">{grd.pager.currentPage}</span>   of <span className="badge badge-primary">{jnPager.getPageSize(grd.pager)}</span>| Records : <span className="badge badge-primary">{grd.pager.count}</span>
+                <span className="badge badge-success">Page : {grd.pager.currentPage}</span>   of <span className="badge badge-primary">{jnPager.getPageSize(grd.pager)}</span>| Records : <span className="badge badge-primary">{grd.pager.count}</span>
             </div>
         </div>
     
