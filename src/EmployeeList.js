@@ -5,7 +5,6 @@ import Pager from "./lib/Pager"
 import EmployeeEntry from "./EmployeeEntry";
 const $ = window.$;
 
-
 const GridPanel = ({children,panelTitle}) => {
 
     const _showPopUp = () => {

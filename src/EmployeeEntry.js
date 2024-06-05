@@ -1,15 +1,34 @@
 import { useState } from "react";
 
 
+const jnF = {
+
+    valiatedRequired : (val) => {
+        if(val){
+            return true;
+        }
+    }
+    ,setValidation : (jnModel) => {
+
+    }
+}
+
 
 const Field  = ({label,val,required,regEx}) => {
     const validationStarted = false;
     const [localValue,setLocalValue] = useState(val);
-    //const _children = children;
-
+    
+    const setVal = (e) =>{
+        const fn = (arg1,arg2,arg3)=>{
+            console.group(arg1);
+        }
+        
+        setLocalValue(e.target.value,fn);
+        console.log(localValue);
+    }
     return (<div className="form-group">
         <label>{label} { required==true && <span className="text-danger">*</span>}</label>
-        <input type="text"  className="form-control" value={localValue} onChange={(e) => setLocalValue(e.target.value)}  />
+        <input type="text"  className="form-control" value={localValue} onChange={(e) => setVal(e) }  />
     </div>);
 }
 
@@ -31,7 +50,7 @@ const FieldDropDown  = ({label,val,required,drpData}) => {
 
 
 const EmployeeEntry = ({grd})=>{
-
+    
     return (
 
         <div className="modal fade" id="modalEntry" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -51,7 +70,7 @@ const EmployeeEntry = ({grd})=>{
                         <div className="col-md-9">
                             <div className="row">
                                 <div className="col-md-4">
-                                    <Field label="First Name" val={grd.currentRow.firstName} required={true}></Field>
+                                    <Field label="First Name" val={grd.currentRow.firstName}  ></Field>
                                 </div>
                                 <div className="col-md-4">
                                     <Field label="Last Name" val={grd.currentRow.lastName}></Field>
